@@ -23,8 +23,10 @@ public class ClientHandler extends Thread {
         try {
         	output=new PrintStream((this.clientSocket).getOutputStream());
             output.println("Connected!");
-        	output.println(Location.getLocation());
+        	output.println(Location.getCity());
         	output.println(Location.getWeather());
+        	output.print(Location.getLat());
+        	output.print(Location.getLng());
         } 
         catch(Exception e) {
         	e.printStackTrace();
